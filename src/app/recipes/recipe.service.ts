@@ -9,7 +9,7 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 export class RecipeService {
     recipeChanged = new Subject<Recipe[]>(); 
 
-    private recipes: Recipe[] = [
+    /* private recipes: Recipe[] = [
         new Recipe('Chicken Biryani', 'A super-tasty chicken biryani - just awesome!', 'https://www.africanbites.com/wp-content/uploads/2018/04/IMG_0165.jpg', [
             new Ingredient('Basmati Rice', 1),
             new Ingredient('Chicken', 2),
@@ -22,9 +22,16 @@ export class RecipeService {
             new Ingredient('Buns', 2),
             new Ingredient('Meat', 1)
         ])
-      ];
+      ]; */
+
+      private recipes: Recipe[] = [];
 
       constructor(private slService: ShoppingListService) {}
+
+      setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipeChanged.next(this.recipes.slice()); 
+      }
 
       getRecipes() {
           return this.recipes.slice();
