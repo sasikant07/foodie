@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 import { RecipeService } from '../recipe.service';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -14,11 +15,15 @@ export class RecipeEditComponent implements OnInit {
   editMode = false;
   recipeForm: FormGroup;
 
+  /* get ingredientsControls() {
+    return (this.recipeForm.get('ingredients') as FormArray).controls;  // sames as getControls()
+  } */
+
   constructor(
     private route: ActivatedRoute, 
     private recipeService: RecipeService,
     private router: Router
-    ) { }
+    ) {}
 
   ngOnInit() {
     this.route.params
