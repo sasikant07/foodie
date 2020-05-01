@@ -1,4 +1,10 @@
 # Foodie
+Steps to follow :
+Step 1: Signin if user already exists.
+        if Not Signup new user.
+Step 2: Create recipe adding name, image url, description and ingredients.
+Step 3: save the recipes, edit them or delete them.
+Step 4: Manage recipes by fetching the recipes.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
